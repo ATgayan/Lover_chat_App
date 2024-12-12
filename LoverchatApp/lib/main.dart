@@ -1,3 +1,5 @@
+import 'package:affinity/pages/Chat.dart';
+import 'package:affinity/pages/loading.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,32 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-       
-      ),
-      home: Scaffold(
-       
-        appBar: AppBar(
-          title: const Text("data"),
-          
-          
-          backgroundColor: Colors.black,
-          
-          
-          actions: const <Widget>[
-               Icon(Icons.ac_unit),
-               Icon(Icons.ac_unit),
-               Icon(Icons.ac_unit),
-          ],
-          
-        ),
-        body: Container(),
-      ),
-
+      initialRoute: '/loading',
+      routes: {
+        '/loading': (context) => const LoadingScreen(),
+        '/Home': (context) => Chat()
+      },
+      title: 'LoveChat',
+     
       debugShowCheckedModeBanner: false,
-      
     );
   }
 }
-
